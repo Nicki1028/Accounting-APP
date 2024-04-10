@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{21ECCE11-7DED-42D7-99E7-C38C7AC5C1DF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>記帳1</RootNamespace>
+    <AssemblyName>記帳1</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CSV1">
+      <HintPath>..\..\CSV1\CSV1\bin\Debug\CSV1.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.1\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BarChartBuilder.cs" />
+    <Compile Include="ChartBuilder.cs" />
+    <Compile Include="Charttype.cs" />
+    <Compile Include="CostItem.cs" />
+    <Compile Include="CsvService.cs" />
+    <Compile Include="Director.cs" />
+    <Compile Include="Extensions\ComboExtension.cs" />
+    <Compile Include="Extensions\FileExtensions.cs" />
+    <Compile Include="LineChartBuilder.cs" />
+    <Compile Include="PieChartBuilder.cs" />
+    <Compile Include="Models\KeyValueModel.cs" />
+    <Compile Include="Navbar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Navbar.Designer.cs">
+      <DependentUpon>Navbar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Extensions\PictureBoxExtensions.cs" />
+    <Compile Include="Extensions\PictureColumnExtensions.cs" />
+    <Compile Include="PictureForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PictureForm.Designer.cs">
+      <DependentUpon>PictureForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Singleton.cs" />
+    <Compile Include="Singletonform.cs" />
+    <Compile Include="圖表分析.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="圖表分析.Designer.cs">
+      <DependentUpon>圖表分析.cs</DependentUpon>
+    </Compile>
+    <Compile Include="帳戶.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="帳戶.Designer.cs">
+      <DependentUpon>帳戶.cs</DependentUpon>
+    </Compile>
+    <Compile Include="記事本.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="記事本.Designer.cs">
+      <DependentUpon>記事本.cs</DependentUpon>
+    </Compile>
+    <Compile Include="記一筆.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="記一筆.Designer.cs">
+      <DependentUpon>記一筆.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Navbar.resx">
+      <DependentUpon>Navbar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PictureForm.resx">
+      <DependentUpon>PictureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="圖表分析.resx">
+      <DependentUpon>圖表分析.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="帳戶.resx">
+      <DependentUpon>帳戶.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="記一筆.resx">
+      <DependentUpon>記一筆.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="記事本.resx">
+      <DependentUpon>記事本.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
